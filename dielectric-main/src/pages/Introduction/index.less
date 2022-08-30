@@ -1,0 +1,286 @@
+.root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.headFirst {
+  z-index: 8;
+  width: 100vw;
+  height: 3.33vh;
+  background-image: linear-gradient(to right, #0099ca 0%, #0199cb 100%);
+}
+
+.headSecond {
+  z-index: 8;
+  width: 100vw;
+  height: 10.88vh;
+  background-color: rgb(255, 255, 255);
+}
+
+.headLogo {
+  z-index: 9;
+  margin-top: -3.6vh;
+}
+
+.headTitle {
+  z-index: 9;
+  margin-top: 1.6vh;
+  overflow: hidden;
+  color: #27355b;
+  font-weight: 900;
+  font-size: 1.7rem;
+  line-height: 1.8rem;
+}
+
+.headTitleUs {
+  margin-top: 1vh;
+  overflow: hidden;
+  color: #27355b;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+}
+
+.body {
+  position: relative;
+  width: 100vw;
+  height: 76.88vh;
+  overflow: hidden;
+}
+
+.bodyBackgroundImage {
+  z-index: 1;
+  margin-top: -20vh;
+}
+
+.bodySubscriptBox {
+  position: absolute;
+  z-index: 8;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: brown;
+}
+
+.bodySubscript {
+  position: absolute;
+  z-index: 9;
+  width: 9vw;
+  height: 3vw;
+  background-color: #0099cb;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.bodySubscriptBorder {
+  position: absolute;
+  z-index: 9;
+  width: 9.9vw;
+  height: 3.3vw;
+  background-color: #fff;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.bodyBanner {
+  display: flex;
+  flex-direction: row;
+}
+
+.bodyBannerLeft {
+  z-index: 2;
+  width: 34.9vw;
+  height: 30.88vh;
+  margin-top: -30.88vh;
+  background-color: #fff;
+}
+
+.bodyBannerLeftBackground {
+  z-index: 8;
+  width: 100%;
+  height: 23.11vh;
+  margin-top: -12.89vh;
+  background-color: #337494;
+  clip-path: polygon(0 0, 100% 43%, 100% 100%, 0 57%);
+}
+
+.bodyBannerLeftText {
+  z-index: 9;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.6rem;
+  transform: translate(4vw, 10vh) rotate(10.2deg);
+  transform-origin: center;
+}
+
+.bodyBannerMiddle {
+  z-index: 1;
+  width: 16.2vw;
+  height: 26vh;
+  margin-top: -26vh;
+  margin-left: -0.5vw;
+  background-color: #fff;
+}
+
+.bodyBannerMiddleBackground {
+  z-index: 8;
+  width: 100%;
+  height: 18.4vh;
+  margin-top: -13vh;
+  background-color: #308ba5;
+  clip-path: polygon(0 29%, 100% 0, 100% 71%, 0 100%);
+}
+
+.bodyBannerMiddleIcon {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100;
+  height: 8vh;
+  transform: translate(2vw, 5.6vh) rotate(-13.2deg);
+  transform-origin: center;
+}
+
+.bodyBannerMiddleIconItem {
+  width: 6vh;
+  height: 6vh;
+  margin-left: 0.2vw;
+  background-color: #fff;
+  clip-path: polygon(50% 2%, 100% 50%, 50% 100%, 0% 100%, 50% 50%, 0% 0%);
+}
+
+.bodyBannerRightBox {
+  z-index: 2;
+  width: 49.125vw;
+  height: 26vh;
+  margin-top: -26vh;
+  margin-left: -0.1vw;
+}
+
+.bodyBannerRight {
+  z-index: 2;
+  width: 49.125vw;
+  height: 26vh;
+  margin-bottom: -26vh;
+  margin-left: -0.1vw;
+  background-color: #fff;
+  clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+}
+
+.bodyBannerRightBackground {
+  z-index: 8;
+  width: 100%;
+  height: 28vh;
+  margin-top: -39vh;
+  background-color: #33a1b0;
+  clip-path: polygon(0 0, 100% 53%, 100% 100%, 0 47%);
+}
+
+.bodyBannerRightText {
+  z-index: 9;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.76rem;
+  transform: translate(2.2vw, 11vh) rotate(9.2deg);
+  transform-origin: center;
+}
+
+.bodyContent {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: 22vh;
+  margin-top: -22vh;
+  padding-right: 4vw;
+  padding-bottom: 0.5vh;
+  padding-left: 4vw;
+}
+
+.bodyContentIntroductionLeft {
+  color: #1a2828;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.bodyContentIntroductionRight {
+  color: #4e999e;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.bodyContentIntroductionUS {
+  color: #27355b;
+  font-weight: 900;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+.bodyContentIntroductionContent {
+  margin-top: 0.4rem;
+  text-indent: 2em;
+}
+
+.bodyContentIntroductionDeviceList {
+  margin-top: 2.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bodyContentIntroductionDeviceListItem:hover {
+  color: #0099ca;
+  cursor: pointer;
+}
+
+.bodyContentIntroductionDeviceListIcon {
+  width: 0.8vw;
+  height: 0.8vw;
+  line-height: 0.8vw;
+  background-color: #0a96c5;
+  transform: translate(-1.2vw, 0.8vh) rotate(45deg);
+  transform-origin: center;
+}
+
+.bodyContentIntroductionDeviceListLink {
+  font-size: 0.8rem;
+}
+
+.bodyContentIntroductionImage {
+  margin-top: 6vh;
+}
+
+.bodyContentIntroductionContact {
+  width: 12vw;
+  margin-top: 6vh;
+  margin-left: -7rem;
+  color: rgb(100, 100, 100);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.bodyContentIntroductionPhone {
+  width: 12vw;
+  margin-top: 0.1vh;
+  // margin-right: 2vw;
+  margin-left: -4.35rem;
+  color: rgb(100, 100, 100);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.footFirst {
+  width: 100vw;
+  height: 5.77vh;
+  line-height: 5.77vh;
+  background-image: linear-gradient(to right, #0099ca 0%, #0199cb 100%);
+}
+
+.footSecond {
+  width: 100vw;
+  height: 3.11vh;
+  background-image: linear-gradient(to right, #006599 0%, #006599 100%);
+}
+
+.footIcon {
+  margin-right: 0.6vw;
+}
