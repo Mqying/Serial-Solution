@@ -1,5 +1,7 @@
 package cmd
 
+// Set nums to declare operation
+
 const (
 	SerialCmdEmpty        = 0
 	SerialCmdFrontPage    = 1

@@ -10,6 +10,11 @@ var (
 	errDeviceNoResp = errors.New("remote device no response")
 )
 
+// To get all data from serial, there are three ways
+// I.   Set max time
+// II.  Fixed length
+// III. Analyse end data, like ReceiveDielectronData below
+
 func (s *VoltageSensor) ReceiveDielectronData() ([]byte, error) {
 	data := []byte{}
 	l := 0
@@ -34,10 +39,10 @@ func (s *VoltageSensor) ReceiveDielectronData() ([]byte, error) {
 		}
 
 		data = append(data, buffer[:n]...)
-		
+
 		l = len(data)
-		if (data[l - 1] == 0xD6 && data[l - 2] == 0xB7) || 
-		   (data[l - 1] == 0x20 && data[l - 2] == 0xD6) {
+		if (data[l-1] == 0xD6 && data[l-2] == 0xB7) ||
+			(data[l-1] == 0x20 && data[l-2] == 0xD6) {
 			info := LogBytes(data)
 			zlog.Debug("[Dielectron] ALL bytes pc get : " + info)
 
@@ -69,7 +74,7 @@ func (s *VoltageSensor) ReceiveAcidData() ([]byte, error) {
 		data = append(data, buffer[:n]...)
 		length = len(data)
 
-		if (length > 3) && (data[length - 1] == 0x01 && data[length - 2] == 0x64 && data[length - 3] == 0x1d)  {
+		if (length > 3) && (data[length-1] == 0x01 && data[length-2] == 0x64 && data[length-3] == 0x1d) {
 			info := LogBytes(data)
 			zlog.Debug("[Acid] ALL bytes pc get : " + info)
 
@@ -106,7 +111,7 @@ func (s *VoltageSensor) ReceiveFlashData() ([]byte, error) {
 		data = append(data, buffer[:n]...)
 		length = len(data)
 
-		if (data[length - 1] == 13) && !IsAscii(data[length - 2])  {
+		if (data[length-1] == 13) && !IsAscii(data[length-2]) {
 			info := LogBytes(data)
 			zlog.Debug("[Flash] ALL bytes pc get : " + info)
 
@@ -134,9 +139,9 @@ func (s *VoltageSensor) ReceiveWaterData() ([]byte, error) {
 		data = append(data, buffer[:n]...)
 
 		length = len(data)
-		if (length > 3) && (data[length - 1] == 0x01 && data[length - 2] == 0x64 && data[length - 3] == 0x1d)  {
+		if (length > 3) && (data[length-1] == 0x01 && data[length-2] == 0x64 && data[length-3] == 0x1d) {
 			zlog.Debug("[Water] ALL bytes pc get : " + LogBytes(data))
-			return data, nil 
+			return data, nil
 		}
 	}
 }

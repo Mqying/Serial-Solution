@@ -12,6 +12,8 @@ import (
 	"go.uber.org/zap"
 )
 
+// Set all commands; Req -> Controller -> Device -> Machine -> Parse -> Models -> DB -> Resp
+
 var (
 	frontPage    = []byte{0x5A, 0xAA, 0xA5}
 	nextPage     = []byte{0x5A, 0xBB, 0xA5}

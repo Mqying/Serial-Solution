@@ -16,7 +16,7 @@ import (
 const (
 	maxOpenConns = 10000
 	maxIdleConns = 1000
-	maxLifetime  = time.Duration(30) * time.Second
+	maxLifetime  = time.Duration(30) * time.Second	// config
 
 	adminRouterGroup  = "admin"
 	deviceRouterGroup = "device"
@@ -31,7 +31,7 @@ func main() {
 	router.Use(middleware.CORSMiddleware())
 	routerBasicGroup := router.Group("/api/v1")
 
-	db, err := sql.Open("sqlite3", "config/sqlite.db")
+	db, err := sql.Open("sqlite3", "config/sqlite.db")	// connet sqlite 
 	if err != nil {
 		zlog.Fatal(err.Error())
 	}
@@ -43,7 +43,6 @@ func main() {
 
 	recordController := controller.NewrecordController(db)
 	configController := controller.NewconfigController(db)
-	//deviceController := mock.NewMockController(db)
 	deviceController := controller.NewDeviceController(db)
 	
 	recordController.RegisterRouter(routerBasicGroup.Group(recordRouterGroup))

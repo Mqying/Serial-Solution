@@ -7,6 +7,8 @@ import (
 	"github.com/silverswords/dielectric/server/zlog"
 )
 
+// To seperate machine
+
 const (
 	DielectronType = iota
 	WaterType
@@ -38,8 +40,8 @@ func CreateRecordTable(db *sql.DB) error {
 		zlog.Error(err)
 		return err
 	}
-	
-	return nil 
+
+	return nil
 }
 
 func GetAllRecords(db *sql.DB, deviceType int) (interface{}, error) {
@@ -56,4 +58,3 @@ func GetAllRecords(db *sql.DB, deviceType int) (interface{}, error) {
 
 	return nil, errors.New("wrong device type")
 }
-

@@ -6,6 +6,9 @@ import (
 	"fmt"
 )
 
+// Make Config a json file, front get configs, so it won't wait for backend to start up
+// To realize this, should learn how to use fyne
+
 const (
 	DeviceTypeTableName = "device_type"
 	LogoTableName       = "logo"
@@ -57,7 +60,7 @@ func GetConfig(db *sql.DB) (*Config, error) {
 		Flash:      flash,
 		Logo:       logo,
 	}
-	
+
 	return config, nil
 }
 
@@ -75,7 +78,7 @@ func GetDeviceType(db *sql.DB) (int, error) {
 	}
 
 	if dielectron == 1 {
-		return DielectronType, nil 
+		return DielectronType, nil
 	}
 
 	if water == 1 {

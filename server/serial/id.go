@@ -15,7 +15,7 @@ func (s *VoltageSensor) GetDeviceID(deviceType int) ([]byte, error) {
 		err error
 	)
 
-	time.Sleep(time.Millisecond * 500)
+	time.Sleep(time.Millisecond * 500)	// Some time the machine mabey slow, if spend to fast, there will be wrong
 
 	if deviceType == model.WaterType {
 		n, err = s.Write(waterGetId)
@@ -34,7 +34,7 @@ func (s *VoltageSensor) GetDeviceID(deviceType int) ([]byte, error) {
 
 	data := []byte{}
 
-	retry := 0
+	retry := 0			// Set retry time, aviod dead loop, show users info
 	for {
 		if retry == 4 {
 			break

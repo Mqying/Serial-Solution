@@ -10,15 +10,15 @@ require (
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	go.bug.st/serial v1.3.5
 	go.uber.org/zap v1.21.0
-	golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97
-	golang.org/x/text v0.3.7
 )
 
-require github.com/creack/goselect v0.1.2 // indirect
+require (
+	github.com/creack/goselect v0.1.2 // indirect
+	golang.org/x/text v0.3.7 // indirect
+)
 
 require (
 	github.com/BurntSushi/toml v1.1.0 // indirect
-	github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
@@ -33,6 +33,7 @@ require (
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
+	golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97 // indirect
 	golang.org/x/net v0.0.0-20210805182204-aaa1db679c0d // indirect
 	golang.org/x/sys v0.0.0-20220412211240-33da011f77ad // indirect
 	google.golang.org/protobuf v1.28.0 // indirect

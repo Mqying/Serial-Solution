@@ -8,6 +8,9 @@ import (
 	"github.com/silverswords/dielectric/server/zlog"
 )
 
+// To simplify zlog usage and seperate different machine
+
+// To seperate machines
 func (s *VoltageSensor) ReceiveData(deviceType int) ([]byte, error) {
 	switch deviceType {
 	case model.DielectronType:
@@ -45,17 +48,13 @@ func (s *VoltageSensor) ReceiveData(deviceType int) ([]byte, error) {
 	return nil, err
 }
 
+// To help analyse data
 func IsAscii(b byte) bool {
-	if (b >= 0 && b <= 127) {
-
-		return true
-	}
-
-	return false
+	return b <= 127
 }
 
 func IsNum(b byte) bool {
-	if (b >= 48 && b <= 57) {
+	if b >= 48 && b <= 57 {
 
 		return true
 	}
@@ -72,6 +71,7 @@ func IsAlpha(b byte) bool {
 	return false
 }
 
+// To simplify zlog usage
 func LogBytes(b []byte) string {
 	if len(b) == 0 {
 		err := errors.New("-----------NO DATA------------ ")
@@ -124,7 +124,7 @@ func LogStrs(b []string) string {
 	if len(b) == 0 {
 		err := errors.New("-----------NO DATA------------ ")
 		zlog.Error(err)
-		
+
 		return "----NO DATA ERR----"
 	}
 
@@ -141,5 +141,5 @@ func LogStrs(b []string) string {
 	length := len(b)
 	info = info + " ------- total len : " + strconv.Itoa(length)
 
-	return info 
+	return info
 }
